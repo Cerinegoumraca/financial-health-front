@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 const App = () => {
   return (
     <FinancialProvider>
-      <div className="min-h-screen bg-gray-100">
+      <div className="min-h-screen w-full bg-gray-100">
         <Dashboard />
       </div>
     </FinancialProvider>
