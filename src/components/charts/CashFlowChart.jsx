@@ -10,7 +10,7 @@ const CashFlowChart = () => {
         labels: [], // Pour les dates
         datasets: [
             {
-                label: 'Flux de Trésorerie',
+                label: 'Cash Flow',
                 data: [], // Données de flux de trésorerie
                 fill: false,
                 backgroundColor: 'rgba(75,192,192,0.4)',
@@ -43,7 +43,7 @@ const CashFlowChart = () => {
 
     return (
         <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="text-xl">Flux de Trésorerie</h2>
+            <h2 className="text-xl">Cash Flow</h2>
             <Line data={cashFlowData} />
         </div>
     );

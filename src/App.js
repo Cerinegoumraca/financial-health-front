@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Dashboard from './pages/Dashboard';
+import ExpenseTracker from './pages/ExpenseTracker';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const App = () => {
     <Router>
        {/* Affichage du Header sur toutes les pages */}
       <Routes>
-        <Route exact path="/" element={<Dashboard />} />
+        <Route exact path="/" element={<ExpenseTracker />} />
         {/* Ajoutez d'autres routes ici si nécessaire */}
       </Routes>
       {/* Affichage du Footer sur toutes les pages */}
