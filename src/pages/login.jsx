@@ -6,7 +6,6 @@ import googleIcon from "../assets/google.png";
 import microsoftIcon from "../assets/microsoft.png";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-
 import Cookies from "js-cookie";
 
 const Login = () => {
