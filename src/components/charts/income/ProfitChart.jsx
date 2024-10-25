@@ -41,8 +41,8 @@ const ProfitChart = () => {
     }, []);
 
     return (
-        <div className="bg-white rounded-lg shadow p-6 max-w-md mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-4 text-gray-800">Profits</h2>
+        <div className="bg-white rounded-lg shadow p-6 max-w-md mx-auto mt-5">
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-800 mt-5">Profits</h2>
             <Bar data={profitsData} />
         </div>
     );

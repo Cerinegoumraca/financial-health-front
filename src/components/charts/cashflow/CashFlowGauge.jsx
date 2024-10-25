@@ -1,4 +1,5 @@
 // src/components/CashFlowGauge.jsx
+/*
 import React from 'react';
 import  GaugeChart from 'react-gauge-chart';
 
@@ -25,3 +26,4 @@ const CashFlowGauge = ({ cashFlow }) => {
 };
 
 export default CashFlowGauge;
+*/

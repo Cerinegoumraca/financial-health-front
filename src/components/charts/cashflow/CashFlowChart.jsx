@@ -49,8 +49,8 @@ const CashFlowChart = () => {
     }, []);
 
     return (
-        <div className="bg-red-300 rounded-lg shadow p-4">
-            <h2 className="text-xl">Cash Flow</h2>
+        <div className="bg-white rounded-lg shadow p-10 max-w-md mx-auto mt-5 mb-20" >
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-800 mt-5">Cash Flow</h2>
             <Line data={chartData} />
         </div>
     );

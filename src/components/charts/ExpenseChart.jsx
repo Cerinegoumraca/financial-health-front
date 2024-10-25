@@ -35,8 +35,8 @@ const ExpenseChart = () => {
     }, []);
 
     return (
-        <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="text-xl">Dépenses par Catégorie</h2>
+        <div className="bg-white rounded-lg shadow p-6 max-w-md mx-auto mt-5">
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-800 mt-5">Expenses</h2>
             <Bar data={expensesData} />
         </div>
     );
