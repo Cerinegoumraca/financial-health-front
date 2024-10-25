@@ -1,17 +1,20 @@
-// src/App.jsx
 import React from 'react';
-import FinancialProvider from './components/context/FinancialContext'; // Correction de l'import ici
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
-import Login from './pages/login';
-import { Routes, Route } from 'react-router-dom';
+import Login from './pages/Login';
+import FinancialProvider from './components/context/FinancialContext';
 
 const App = () => {
   return (
-    <FinancialProvider>
-      <div className="min-h-screen bg-gray-100">
-        <Login />
-      </div>
-    </FinancialProvider>
+    <div className="min-h-screen bg-gray-100">
+      <FinancialProvider>
+        <Routes>
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </FinancialProvider>
+    </div>
   );
 };
 
