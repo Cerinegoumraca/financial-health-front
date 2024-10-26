@@ -40,17 +40,17 @@ const Dashboard = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <MetricsCard 
-                    title="Total Dépenses" 
+                    title="Total Expenses" 
                     value={`$${metrics.totalExpenses}`} 
                     icon={<i className="fas fa-dollar-sign"></i>} 
                 />
                 <MetricsCard 
-                    title="Flux de Trésorerie" 
+                    title="Cash Flow" 
                     value={`$${metrics.cashFlow}`} 
                     icon={<i className="fas fa-money-bill-wave"></i>} 
                 />
                 <MetricsCard 
-                    title="Bénéfices Totals" 
+                    title="Total profits" 
                     value={`$${metrics.totalProfits}`} 
                     icon={<i className="fas fa-chart-line"></i>} 
                 />

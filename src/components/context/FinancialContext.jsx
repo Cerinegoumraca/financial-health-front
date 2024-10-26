@@ -4,7 +4,7 @@ import React, { createContext, useState, useEffect } from 'react';
 export const FinancialContext = createContext();
 
 // Créer un provider pour fournir les données du contexte
-export const FinancialProvider = ({ children }) => {
+ const FinancialProvider = ({ children }) => {
   const [metrics, setMetrics] = useState(null);
 
   useEffect(() => {
@@ -27,3 +27,4 @@ export const FinancialProvider = ({ children }) => {
     </FinancialContext.Provider>
   );
 };
+export default FinancialProvider
