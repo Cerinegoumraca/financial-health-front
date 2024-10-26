@@ -1,48 +1,43 @@
-// src/components/Charts/ExpenseChart.jsx
 import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
-import { Chart as ChartJS, registerables } from 'chart.js';
-
-ChartJS.register(...registerables);
+import axios from 'axios';
 
 const ExpenseChart = () => {
-    const [expenseData, setExpenseData] = useState({
-        labels: [], // Pour les dates ou catégories
+    const [expensesData, setExpensesData] = useState({
+        labels: [], // Catégories de dépenses
         datasets: [
             {
-                label: 'Expences',
-                data: [], // Données de dépenses
-                backgroundColor: 'rgba(255,99,132,0.6)',
+                label: 'Dépenses',
+                data: [], // Montants des dépenses
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
             },
         ],
     });
 
     useEffect(() => {
-        // Simuler la récupération de données en temps réel
-        const fetchData = async () => {
-            // Remplacez ceci par un appel API réel
-            const response = await fetch('/api/expenses'); // Votre API pour les dépenses
-            const data = await response.json();
-            
-            // Mettez à jour les labels et les données avec les données de l'API
-            setExpenseData({
-                labels: data.map(entry => entry.date || entry.category), // Ex. ['Jan', 'Feb', 'Mar'] ou ['Alimentation', 'Transport']
-                datasets: [
-                    {
-                        ...expenseData.datasets[0],
-                        data: data.map(entry => entry.amount), // Ex. [100, 200, 300]
-                    },
-                ],
-            });
-        };
+        axios.get('/api/depenses') // API pour récupérer les dépenses
+            .then(response => {
+                const categories = response.data.map(item => item.categorie);
+                const montants = response.data.map(item => item.montant);
 
-        fetchData();
+                setExpensesData({
+                    labels: categories,
+                    datasets: [
+                        {
+                            label: 'Dépenses',
+                            data: montants,
+                            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                        },
+                    ],
+                });
+            })
+            .catch(error => console.error(error));
     }, []);
 
     return (
-        <div className="bg-white rounded-lg shadow p-4">
-            <h2 className="text-xl">Expenses</h2>
-            <Bar data={expenseData} />
+        <div className="bg-white rounded-lg shadow p-6 max-w-md mx-auto mt-5">
+            <h2 className="text-2xl font-bold text-center mb-4 text-gray-800 mt-5">Expenses</h2>
+            <Bar data={expensesData} />
         </div>
     );
 };
