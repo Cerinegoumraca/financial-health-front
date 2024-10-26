@@ -50,7 +50,7 @@ const TransactionPage = () => {
 
   return (
     <div className="container mx-auto p-4 max-w-lg bg-white rounded-lg shadow-md mt-10">
-      <h2 className="text-2xl font-bold mb-4">Ajouter une nouvelle transaction</h2>
+      <h2 className="text-2xl font-bold mb-4">Add a new transaction</h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
         

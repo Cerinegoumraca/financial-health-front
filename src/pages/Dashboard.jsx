@@ -3,6 +3,8 @@
 
 
 import {React, useState ,useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 import { FinancialContext } from '../components/context/FinancialContext';
 import MetricsCard from '@/components/MetricsCard';
@@ -13,7 +15,13 @@ import CashFlowChart from '../components/Charts/cashflow/CashFlowChart';
 import { Button } from '../components/ui/button'; // Importation du bouton
 
 
+
 const Dashboard = () => {
+    const navigate = useNavigate();
+
+    const handleAddTransactionClick = () => {
+      navigate('/transaction'); // Redirige vers la page des transactions
+    };
     const { metrics } = useContext(FinancialContext);
    // const { metrics } = useContext(FinancialContext);
     // Exemple de pourcentage d'objectif, à remplacer par les données réelles
@@ -21,9 +29,7 @@ const Dashboard = () => {
     const cashFlow = 500; // Remplace avec la logique réelle pour obtenir le cash flow
     const [isFormOpen, setIsFormOpen] = useState(false);
 
-    const handleAddTransactionClick = () => {
-        setIsFormOpen(!isFormOpen);
-    };
+   
 
     const handleDownloadClick = () => {
         // Logique de téléchargement des transactions

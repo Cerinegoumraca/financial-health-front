@@ -3,7 +3,7 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Signup from './pages/signup';
 import FinancialProvider from './components/context/FinancialContext';
-import TransactionPage from './components/TransactionPage';
+import TransactionPage from './pages/TransactionPage';
 
 const App = () => {
   return (
@@ -13,6 +13,8 @@ const App = () => {
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+
+
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/transaction" element={<TransactionPage />} />
 
